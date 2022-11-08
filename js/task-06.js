@@ -6,9 +6,13 @@ const refs = {
 refs.input.addEventListener("blur", onQuantityOfEnteredCharacters);
 
 function onQuantityOfEnteredCharacters(event) {
-  event.currentTarget.value.length < refs.valueOfInput.dataset.length
-    ? refs.input.classList.add("invalid")
-    : refs.input.classList.add("valid");
+  if (event.currentTarget.value.length < refs.valueOfInput.dataset.length) {
+    refs.input.classList.add("invalid");
+    refs.input.classList.remove("valid");
+  } else {
+    refs.input.classList.remove("invalid");
+    refs.input.classList.add("valid");
+  }
 }
 
 // Напиши скрипт, который при потере фокуса на
