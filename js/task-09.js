@@ -5,13 +5,14 @@ function getRandomHexColor() {
 const refs = {
   body: document.querySelector("body"),
   btn: document.querySelector(".change-color"),
+  span: document.querySelector(".color"),
 };
 
 refs.btn.addEventListener("click", onChangeColor);
 
 function onChangeColor(event) {
   refs.body.style.backgroundColor = getRandomHexColor();
-  console.log(getRandomHexColor());
+  refs.span.textContent = getRandomHexColor();
 }
 
 // Напиши скрипт, который изменяет цвета фона элемента < body >
