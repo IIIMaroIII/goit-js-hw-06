@@ -1,9 +1,12 @@
 const refs = {
-  loginValue: document.querySelector("#name-output"),
+  span: document.querySelector("#name-output"),
   inputValue: document.querySelector("#name-input"),
 };
-function onEnterText(event) {
-  refs.loginValue.textContent = event.currentTarget.value;
-}
 
 refs.inputValue.addEventListener("input", onEnterText);
+
+function onEnterText(event) {
+  event.currentTarget.value < 1
+    ? (refs.span.textContent = "Annonymous")
+    : (refs.span.textContent = event.currentTarget.value);
+}
