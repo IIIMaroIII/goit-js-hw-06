@@ -16,18 +16,15 @@ const ingredients = [
 // После чего вставит все <li> за одну операцию
 // в список ul#ingredients.
 
-function createElement(array) {
-  ingredients.forEach((element) => {
-    const makeElement = document.createElement("li");
-    makeElement.classList.add("item");
-    const makeTextContentInElement = document.createElement("p");
-    makeTextContentInElement.textContent = `${element}`;
+const ingredient = ingredients.map((product) => {
+  const item = document.createElement("li");
+  item.classList.add("item");
 
-    makeElement.appendChild(makeTextContentInElement);
+  const text = document.createElement("p");
+  text.textContent = product;
+  item.appendChild(text);
+  return item;
+});
 
-    const ulEl = document.querySelector("#ingredients");
-    ulEl.appendChild(makeElement);
-  });
-}
-
-createElement(ingredients);
+const list = document.querySelector("#ingredients");
+list.append(...ingredient);
