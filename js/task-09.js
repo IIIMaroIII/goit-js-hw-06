@@ -11,8 +11,9 @@ const refs = {
 refs.btn.addEventListener("click", onChangeColor);
 
 function onChangeColor(event) {
-  refs.body.style.backgroundColor = getRandomHexColor();
-  refs.span.textContent = getRandomHexColor();
+  const randomColor = getRandomHexColor();
+  refs.body.style.backgroundColor = randomColor;
+  refs.span.textContent = refs.body.style.backgroundColor;
 }
 
 // Напиши скрипт, который изменяет цвета фона элемента < body >
